@@ -140,7 +140,7 @@ export const addToSave = async (req, res) => {
 
 export const removeFromSave = async (req, res) => {
     const data = req.body;   // get the query 
-    console.log(data)
+    
     try{
         const user = await User.findById(data?.userId);
         if(!user){ return res.status(404).json("User not found")}
@@ -167,8 +167,8 @@ export const getSaved = async (req, res) => {
 
        const user = await User.findById(id);
        if(!user){ return res.status(404).json("User not found")}
-       console.log(user)
-       res.status(200).json(user?.likeMovies)
+    
+       res.status(200).json(user.likeMovies)
        
     }
 
