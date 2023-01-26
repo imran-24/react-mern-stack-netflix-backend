@@ -13,9 +13,7 @@ const app = express();
 app.use(bodyParser.json({limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true }))
 app.use(express.json());
-app.use(cors({
-  origin: ['*'],
-}));
+app.use(cors());
 
 app.use("/api/movies", movieRoutes);
 app.use("/api/users", userRoutes);
