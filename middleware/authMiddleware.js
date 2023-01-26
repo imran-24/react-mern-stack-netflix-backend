@@ -10,7 +10,7 @@ export const verifyToken =  (req, res, next) => {
                 // Get token from header
                 token = req.headers.authorization.split(' ')[1];
                 // Verify toekn
-                jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
+                jwt.verify(token, ""+process.env.JWT_SECRET_KEY, (err, user) => {
                     if(err) return res.status(403).json('Token is not valid!')
                     // Get user from token 
                     console.log('user',user)
